@@ -2,7 +2,7 @@
 
 Kirby-Color is a color picker plugin for Kirby CMS v3.
 
-![Kirby Color Screenshot](https://raw.githubusercontent.com/TimOetting/kirby-color/master/preview.png | width=344)
+<img alt="Kirby Color Screenshot" src="https://raw.githubusercontent.com/TimOetting/kirby-color/master/preview.png" width="344">
 
 ### Example Blueprint Field Entry
 ```yaml
