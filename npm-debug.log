@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/tim/.nvm/versions/node/v6.11.2/bin/node',
+1 verbose cli   '/Users/tim/.nvm/versions/node/v6.11.2/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.2
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info lifecycle @~predev: @
+6 silly lifecycle @~predev: no script for predev, continuing
+7 info lifecycle @~dev: @
+8 verbose lifecycle @~dev: unsafe-perm in lifecycle true
+9 verbose lifecycle @~dev: PATH: /Users/tim/.nvm/versions/node/v6.11.2/lib/node_modules/npm/bin/node-gyp-bin:/Users/tim/Dropbox/Server/htdocs/sandbox/kirby-nightly/site/plugins/color/node_modules/.bin:/usr/local/php5/bin:/Users/tim/.nvm/versions/node/v6.11.2/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tim/.composer/vendor/bin:/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home/bin:/Users/tim/Library/Android/sdk/platform-tools:/Users/tim/Library/Android/sdk/tools:/opt/X11/bin:/opt/ImageMagick/bin:/Users/tim/bin:/Users/tim/neuland/fricke/scripts:/Users/tim/neuland/fricke/scripts/locals:/Users/tim/neuland/fricke/nodeshared/node_modules/coffee-script/bin:/Users/tim/neuland/fricke/nodeshared/node_modules/mocha/bin:./node_modules/.bin:/Users/tim/.composer/vendor/spark-installer
+10 verbose lifecycle @~dev: CWD: /Users/tim/Dropbox/Server/htdocs/sandbox/kirby-nightly/site/plugins/color
+11 silly lifecycle @~dev: Args: [ '-c',
+11 silly lifecycle   'watchify -vd -p browserify-hmr -e src/main.js -o index.js' ]
+12 silly lifecycle @~dev: Returned: code: 1  signal: null
+13 info lifecycle @~dev: Failed to exec dev script
+14 verbose stack Error: @ dev: `watchify -vd -p browserify-hmr -e src/main.js -o index.js`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/Users/tim/.nvm/versions/node/v6.11.2/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/tim/.nvm/versions/node/v6.11.2/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:891:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid @
+16 verbose cwd /Users/tim/Dropbox/Server/htdocs/sandbox/kirby-nightly/site/plugins/color
+17 error Darwin 17.7.0
+18 error argv "/Users/tim/.nvm/versions/node/v6.11.2/bin/node" "/Users/tim/.nvm/versions/node/v6.11.2/bin/npm" "run" "dev"
+19 error node v6.11.2
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error @ dev: `watchify -vd -p browserify-hmr -e src/main.js -o index.js`
+22 error Exit status 1
+23 error Failed at the @ dev script 'watchify -vd -p browserify-hmr -e src/main.js -o index.js'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the  package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     watchify -vd -p browserify-hmr -e src/main.js -o index.js
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
