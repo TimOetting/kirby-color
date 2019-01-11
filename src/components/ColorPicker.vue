@@ -34,7 +34,7 @@
       />
       <div 
         class="color-picker__presets"
-        v-if="presets.length > 0"
+        v-if="presets && presets.length > 0"
       >
         <div 
           v-for="(presetColor, index) in presets"
