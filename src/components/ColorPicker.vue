@@ -16,7 +16,7 @@
       </div>
       <k-input 
         class="color-picker__text-input" 
-        v-model="hexColor" 
+        :value="hexColor" 
         name="text" 
         type="text" 
         theme="field" 
@@ -63,7 +63,7 @@ export default {
     presets: Array,
     editableAlpha: Boolean
   },
-  mounted () {
+  created() {
     this.color = this.value || this.default
   },
   data () {
@@ -104,6 +104,11 @@ export default {
     }
   },
   watch: {
+    value(newVal, oldVal) {
+      if(newVal !== this.color) {
+        this.color = this.value
+      }
+    },
     color(color, oldColor){
       if (oldColor) {
         this.$emit('input', this.hexColor)
