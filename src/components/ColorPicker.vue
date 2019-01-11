@@ -2,7 +2,7 @@
   <k-field 
     :label="label"
     class="color-picker"	
-    v-on-click-outside="onClickOutside"
+    @blur="close"
   > 
     <div class="color-picker__input">
       <div 
@@ -51,13 +51,11 @@
 </template>
 
 <script>
-import { mixin as onClickOutside } from 'vue-on-click-outside'
 import { Chrome } from "vue-color";
 export default {
   components: {
     'color-picker': Chrome
   },
-  mixins: [onClickOutside],
   props: {
     label: String,
     value: String,
@@ -77,9 +75,6 @@ export default {
   methods: {
     selectColor(color) {
       this.color = color
-    },
-    onClickOutside(event) {
-      this.close()
     },
     open() {
       this.active = true
