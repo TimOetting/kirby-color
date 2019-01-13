@@ -1,6 +1,6 @@
 <template>
   <k-field 
-    :label="label"
+    v-bind="$props"
     class="color-picker"	
     @blur="close"
   > 
@@ -15,6 +15,7 @@
         ></div>
       </div>
       <k-input 
+        v-bind="$props"
         class="color-picker__text-input" 
         :value="hexColor" 
         name="text" 
@@ -61,7 +62,13 @@ export default {
     value: String,
     default: String,
     presets: Array,
-    editableAlpha: Boolean
+    editableAlpha: Boolean,
+    /* Global props */
+    disabled: Boolean,
+    help: String,
+    required: Boolean,
+    name: [String, Number],
+    type: String
   },
   created() {
     this.color = this.value || this.default
