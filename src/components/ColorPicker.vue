@@ -17,7 +17,7 @@
       <k-input 
         v-bind="$props"
         class="color-picker__text-input" 
-        :value="hexColor" 
+        v-model="hexColor" 
         name="text" 
         type="text" 
         theme="field" 
