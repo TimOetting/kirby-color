@@ -2,7 +2,7 @@
   <k-field 
     v-bind="$props"
     class="color-picker"	
-    @blur="close"
+    @blur="onBlur"
   > 
     <div class="color-picker__input">
       <div 
@@ -27,6 +27,8 @@
     <div 
       class="color-picker__wrapper"
       v-show="active"
+      tabindex="-1" 
+      @blur="close"
     >
       <color-picker 
         v-model="color" 
@@ -91,6 +93,9 @@ export default {
     },
     toggle() {
       this.active = !this.active
+    },
+    onBlur(e) {
+      if(e.relatedTarget === null) this.close()
     }
   },
   computed: {
@@ -150,6 +155,10 @@ export default {
     display inline-block
     position absolute
     z-index 10
+    &:focus
+      outline none
+      border-color inherit
+      box-shadow: none
     // left 38px
   &__presets
     display flex
