@@ -1,11 +1,11 @@
-import ColorPicker  from "./components/ColorPicker.vue";
-import ColorPreview from './components/ColorPreview.vue';
+import ColorPicker from "./components/ColorPicker.vue";
+import ColorPreview from "./components/ColorPreview.vue";
 
 panel.plugin("demo/color", {
   fields: {
-    color: ColorPicker,
+    color: ColorPicker
   },
   components: {
-    'k-color-field-preview': ColorPreview,
+    "k-color-field-preview": ColorPreview
   }
 });
