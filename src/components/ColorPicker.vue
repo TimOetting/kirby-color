@@ -1,8 +1,8 @@
 <template>
   <k-field 
-    :label="label"
+    v-bind="$props"
     class="color-picker"	
-    v-on-click-outside="onClickOutside"
+    @blur="onBlur"
   > 
     <div class="color-picker__input">
       <div 
@@ -15,6 +15,7 @@
         ></div>
       </div>
       <k-input 
+        v-bind="$props"
         class="color-picker__text-input" 
         v-model="hexColor" 
         name="text" 
@@ -26,6 +27,8 @@
     <div 
       class="color-picker__wrapper"
       v-show="active"
+      tabindex="-1" 
+      @blur="close"
     >
       <color-picker 
         v-model="color" 
@@ -34,7 +37,7 @@
       />
       <div 
         class="color-picker__presets"
-        v-if="presets.length > 0"
+        v-if="presets && presets.length > 0"
       >
         <div 
           v-for="(presetColor, index) in presets"
@@ -51,21 +54,25 @@
 </template>
 
 <script>
-import { mixin as onClickOutside } from 'vue-on-click-outside'
 import { Chrome } from "vue-color";
 export default {
   components: {
     'color-picker': Chrome
   },
-  mixins: [onClickOutside],
   props: {
     label: String,
     value: String,
     default: String,
     presets: Array,
-    editableAlpha: Boolean
+    editableAlpha: Boolean,
+    /* Global props */
+    disabled: Boolean,
+    help: String,
+    required: Boolean,
+    name: [String, Number],
+    type: String
   },
-  mounted () {
+  created() {
     this.color = this.value || this.default
   },
   data () {
@@ -78,9 +85,6 @@ export default {
     selectColor(color) {
       this.color = color
     },
-    onClickOutside(event) {
-      this.close()
-    },
     open() {
       this.active = true
     },
@@ -89,6 +93,9 @@ export default {
     },
     toggle() {
       this.active = !this.active
+    },
+    onBlur(e) {
+      if(e.relatedTarget === null) this.close()
     }
   },
   computed: {
@@ -109,6 +116,11 @@ export default {
     }
   },
   watch: {
+    value(newVal, oldVal) {
+      if(newVal !== this.color) {
+        this.color = this.value
+      }
+    },
     color(color, oldColor){
       if (oldColor) {
         this.$emit('input', this.hexColor)
@@ -143,6 +155,10 @@ export default {
     display inline-block
     position absolute
     z-index 10
+    &:focus
+      outline none
+      border-color inherit
+      box-shadow: none
     // left 38px
   &__presets
     display flex
