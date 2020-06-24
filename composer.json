@@ -1,6 +1,6 @@
 {
   "name": "timoetting/kirby-color",
-  "type": "plugin",
+  "type": "kirby-plugin",
   "version": "1.0.0",
   "description": "Kirby-Color is a color picker plugin for Kirby CMS v3.",
   "license": "MIT",
