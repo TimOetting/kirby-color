@@ -33,7 +33,7 @@
       <color-picker 
         v-model="color" 
         class="color-picker__picker"
-        :class="{'color-picker__picker--no-alpha': !editableAlpha}"
+        :class="{'color-picker__picker--no-alpha': !editableAlpha, 'color-picker__picker--no-picker': hidePicker}"
       />
       <div 
         class="color-picker__presets"
@@ -65,6 +65,7 @@ export default {
     default: String,
     presets: Array,
     editableAlpha: Boolean,
+    hidePicker: Boolean,
     /* Global props */
     disabled: Boolean,
     help: String,
@@ -167,6 +168,7 @@ export default {
     width 24px
     height 24px
     margin-bottom 8px
+    margin-top 8px
     margin-right 4px
     cursor pointer
     transition transform .1s
@@ -186,4 +188,6 @@ export default {
     .vc-chrome-alpha-wrap
     .vc-chrome-field:nth-child(3)
       display none
+  &--no-picker
+    display none
 </style>

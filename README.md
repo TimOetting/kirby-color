@@ -11,6 +11,7 @@ fields:
   color:
     type: color
     editableAlpha: true # (optional) if set to false, alpha value controls are not displayed
+    hidePicker: true # (optional) to just show the presets without any color picker
     default: "#EFCB69"
     presets:
       - "#EB6896"
