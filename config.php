@@ -13,10 +13,10 @@ Kirby::plugin('timoetting/colorpicker', [
                 'default' => function ($default = '#FFFFFF') {
                     return $default;
                 },
-                // 'value' => function ($value = null) {
-                //     return $value;
-                //     // return ($value != null) ? $value : $this->props['default'];
-                // }
+                'value' => function ($value = '#FFFFFF') {
+                    return $value;
+                    // return ($value != null) ? $value : $this->props['default'];
+                }
             ],
             // 'computed' => [
             //     'value' => function ($value = null) {
