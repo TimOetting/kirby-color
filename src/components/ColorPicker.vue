@@ -102,9 +102,9 @@ export default {
     hexColor: {
       get() {
         if (typeof this.color === "object") {
-          if (!this.editableAlpha && this.color.a < 1) {
-            this.color.a = 1
-          }
+          // if (!this.editableAlpha && this.color.a < 1) {
+          //   this.color.a = 1
+          // }
           return (this.color.a == 1) ? this.color.hex : this.color.hex8
         } else {
           return this.color
@@ -184,6 +184,6 @@ export default {
     transform translate(-50%, -50%)
   &--no-alpha
     .vc-chrome-alpha-wrap
-    .vc-chrome-field:nth-child(3)
+    .vc-chrome-field:nth-child(4)
       display none
 </style>
