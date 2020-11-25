@@ -10,7 +10,7 @@ Kirby::plugin('timoetting/colorpicker', [
                 'editableAlpha' => function ($editableAlpha = true) {
                     return $editableAlpha;
                 },
-                'default' => function ($default) {
+                'default' => function ($default = null) {
                     return $default;
                 },
                 'value' => function ($value = "#FFFFFF") {
