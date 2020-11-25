@@ -10,19 +10,13 @@ Kirby::plugin('timoetting/colorpicker', [
                 'editableAlpha' => function ($editableAlpha = true) {
                     return $editableAlpha;
                 },
-                'default' => function ($default = '#FFFFFF') {
+                'default' => function ($default) {
                     return $default;
                 },
-                'value' => function ($value = '#FFFFFF') {
-                    return $value;
-                    // return ($value != null) ? $value : $this->props['default'];
+                'value' => function ($value = "#FFFFFF") {
+                    return $this->value ?? $this->default ?? $value;
                 }
             ],
-            // 'computed' => [
-            //     'value' => function ($value = null) {
-            //         return ($value != null) ? $value : $this->props['default'];
-            //     }
-            // ]
         ],
         'textext' => [
             'props' => [
