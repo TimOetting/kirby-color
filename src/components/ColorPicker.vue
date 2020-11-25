@@ -157,9 +157,6 @@ export default {
     z-index 10
     &:focus
       outline none
-      border-color inherit
-      box-shadow: none
-    // left 38px
   &__presets
     display flex
     padding-left 8px
