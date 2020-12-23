@@ -73,7 +73,12 @@ export default {
     type: String
   },
   created() {
-    this.color = this.value || this.default
+    this.color = this.value || this.default;
+    document.body.addEventListener('click', (e) => {
+      if (!this.$el.contains(e.target)) {
+        this.active = false;
+      };
+    });  
   },
   data () {
     return {
